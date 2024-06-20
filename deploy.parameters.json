@@ -1,24 +1,54 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "webAppName": {
-      "value": "yourWebAppName"
+    "subscriptionId": {
+      "value": "0602a223-91a0-424a-87a5-396120718552"
     },
-    "sqlServerName": {
-      "value": "yourSqlServerName"
+    "resourceGroupName": {
+      "value": "keerthiwebapp_group"
     },
-    "sqlAdministratorLogin": {
-      "value": "yourSqlAdminLogin"
-    },
-    "sqlAdministratorLoginPassword": {
-      "value": "SECURE_PASSWORD"
-    },
-    "databaseName": {
-      "value": "yourDatabaseName"
+    "name": {
+      "value": "keerthiwebapp"
     },
     "location": {
-      "value": "eastus"
+      "value": "East US"
+    },
+    "hostingPlanName": {
+      "value": "ASP-keerthiwebappgroup-8dc1"
+    },
+    "serverFarmResourceGroup": {
+      "value": "keerthiwebapp_group"
+    },
+    "alwaysOn": {
+      "value": true
+    },
+    "ftpsState": {
+      "value": "FtpsOnly"
+    },
+    "sku": {
+      "value": "Standard"
+    },
+    "skuCode": {
+      "value": "S1"
+    },
+    "workerSize": {
+      "value": "0"
+    },
+    "workerSizeId": {
+      "value": "0"
+    },
+    "numberOfWorkers": {
+      "value": "1"
+    },
+    "currentStack": {
+      "value": "dotnet"
+    },
+    "phpVersion": {
+      "value": "OFF"
+    },
+    "netFrameworkVersion": {
+      "value": "v8.0"
     }
   }
 }
