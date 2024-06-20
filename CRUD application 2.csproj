@@ -182,12 +182,6 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
-  <!-- Inside your test project's .csproj file -->
-  <ItemGroup>
-    <PackageReference Include="Moq" Version="4.x.x" />
-    <PackageReference Include="NUnit" Version="3.x.x" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.x.x" />
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
