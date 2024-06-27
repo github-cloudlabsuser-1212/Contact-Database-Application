@@ -16,39 +16,7 @@
     },
     "hostingPlanName": {
       "value": "ASP-keerthiwebappgroup-8dc1"
-    },
-    "serverFarmResourceGroup": {
-      "value": "keerthiwebapp_group"
-    },
-    "alwaysOn": {
-      "value": true
-    },
-    "ftpsState": {
-      "value": "FtpsOnly"
-    },
-    "sku": {
-      "value": "Standard"
-    },
-    "skuCode": {
-      "value": "S1"
-    },
-    "workerSize": {
-      "value": "0"
-    },
-    "workerSizeId": {
-      "value": "0"
-    },
-    "numberOfWorkers": {
-      "value": "1"
-    },
-    "currentStack": {
-      "value": "dotnet"
-    },
-    "phpVersion": {
-      "value": "OFF"
-    },
-    "netFrameworkVersion": {
-      "value": "v8.0"
     }
+    
   }
 }
