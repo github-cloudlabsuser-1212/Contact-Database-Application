@@ -33,12 +33,17 @@ namespace CRUD_application_2.Controllers
 
         // POST: User/Create
         [HttpPost]
-        public ActionResult Create(User user)
+        [ValidateAntiForgeryToken] // Added to prevent CSRF attacks
+        public ActionResult Create([Bind(Include = "Id,Name,Email")] User user) // Added model binding
         {
             try
             {
-                userlist.Add(user);
-                return RedirectToAction("Index");
+                if (ModelState.IsValid) // Check if model state is valid
+                {
+                    userlist.Add(user);
+                    return RedirectToAction("Index");
+                }
+                return View(user);
             }
             catch
             {
@@ -59,20 +64,25 @@ namespace CRUD_application_2.Controllers
 
         // POST: User/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, User user)
+        [ValidateAntiForgeryToken] // Added to prevent CSRF attacks
+        public ActionResult Edit(int id, [Bind(Include = "Id,Name,Email")] User user) // Added model binding
         {
             try
             {
-                var existingUser = userlist.FirstOrDefault(u => u.Id == id);
-                if (existingUser == null)
+                if (ModelState.IsValid) // Check if model state is valid
                 {
-                    return HttpNotFound();
-                }
-                existingUser.Name = user.Name;
-                existingUser.Email = user.Email;
-                // Update other fields as necessary
+                    var existingUser = userlist.FirstOrDefault(u => u.Id == id);
+                    if (existingUser == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    existingUser.Name = user.Name;
+                    existingUser.Email = user.Email;
+                    // Update other fields as necessary
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                return View(user);
             }
             catch
             {
@@ -93,6 +103,7 @@ namespace CRUD_application_2.Controllers
 
         // POST: User/Delete/5
         [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken] // Added to prevent CSRF attacks
         public ActionResult DeleteConfirmed(int id)
         {
             var user = userlist.FirstOrDefault(u => u.Id == id);
